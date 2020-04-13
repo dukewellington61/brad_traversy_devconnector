@@ -1,0 +1,32 @@
+8. Route Files With Express Router
+@public and private routes
+
+#private routes
+for example to add a profile you need to be authenticated
+so you need to send along a token to that route (some middleware will handle this)
+
+#public routes don't need tokens
+
+16. Get Current User Profile
+
+mongoose returns a promise 
+
+when ever an API returns a promise we need async await
+
+
+****web token****
+
+if a user logs in or a user registers (new user is created) that user gets a web token
+the web token is then beeing send along with every request that the user makes 
+this identifies a valid user if that user accesses protected routes such as the profile routes which return the profile of that user
+which profile is to be returned is determined by the user's id which is part of the web token
+
+20. Add Profile Experience
+create update existing experience route
+
+
+****controll D**** selects words that are the same
+
+28. Add & Remove Comment Routes
+create like comment route
+create update comment

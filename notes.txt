@@ -30,3 +30,7 @@ create update existing experience route
 28. Add & Remove Comment Routes
 create like comment route
 create update comment
+
+41. Load User & Set Auth Token
+
+Load User --> everytime the App.js component is loaded the web token which is stored in local storage is beeing send to the back end for validation and the the user is loaded

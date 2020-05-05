@@ -31,6 +31,19 @@ create update existing experience route
 create like comment route
 create update comment
 
+
 41. Load User & Set Auth Token
 
-Load User --> everytime the App.js component is loaded the web token which is stored in local storage is beeing send to the back end for validation and the the user is loaded
+Load User --> everytime the App.js component is loaded the web token which is stored in local storage is beeing send to the back end for validation (authentication) and the user is loaded --> the point of this is to see if we are logged in, it'll also give us the user data 
+
+
+42. User Login
+
+done except one thing: in actions/auth.js we have dispatch(loadUser()); why dispatch, why not simplay call loadUser function --> answer to that in link below
+https://www.udemy.com/course/mern-stack-front-to-back/learn/lecture/14555612#questions/10123662
+
+question asked: 
+
+So we need to dispatch a function call (as oppose to calling that function the normal way i.e. without dispatch) whenever the function that is called is changing the state. Is this the way it works?
+
+wait for answer

@@ -32,6 +32,34 @@ create like comment route
 create update comment
 
 
+40. Auth Reducer & Register Action client/src/reducers/auth.js
+
+2) Hmm, there's a pretty big difference if you include or exclude that spread operator. Let's say our payload object looks like:
+
+{
+    token: "abc123xyz789"
+}
+If you include the spread operator, the auth state will look like:
+
+{
+    user: { ... }, // ignoring the full object here for brevity
+    token: "abc123xyz789",
+    isAuthenticated: true,
+    loading: false
+}
+If you exclude the spread operator, the state will become:
+
+{
+    user: { ... }, // ignoring the full object here for brevity
+    payload: {
+        token: "abc123xyz789",
+    },
+    isAuthenticated: true,
+    loading: false
+}
+payload is now a key, containing a nested object with our token. There's nothing inherently wrong with this, but our application certainly may get confused when trying to find the token.
+
+
 41. Load User & Set Auth Token
 
 Load User --> everytime the App.js component is loaded the web token which is stored in local storage is beeing send to the back end for validation (authentication) and the user is loaded --> the point of this is to see if we are logged in, it'll also give us the user data 
@@ -47,3 +75,8 @@ question asked:
 So we need to dispatch a function call (as oppose to calling that function the normal way i.e. without dispatch) whenever the function that is called is changing the state. Is this the way it works?
 
 wait for answer
+
+
+44. Protected Route For Dashboard
+
+done

@@ -7,6 +7,7 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
+  LOGOUT,
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
 
@@ -51,6 +52,7 @@ export const register = ({ name, email, password }) => async (dispatch) => {
     });
 
     // Register action returns only the token, not the user --> hence user has to be loaded
+    // dispatches whatever loadUser() returns which is type and payload
     dispatch(loadUser());
   } catch (err) {
     const errors = err.response.data.errors;
@@ -96,4 +98,9 @@ export const login = (email, password) => async (dispatch) => {
       type: LOGIN_FAIL,
     });
   }
+};
+
+// Logout / Clear Profile
+export const logout = () => (dispatch) => {
+  dispatch({ type: LOGOUT });
 };

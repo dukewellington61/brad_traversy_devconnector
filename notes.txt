@@ -80,3 +80,7 @@ wait for answer
 44. Protected Route For Dashboard
 
 done
+
+45. Profile Reducer & Get Current Profile
+
+done

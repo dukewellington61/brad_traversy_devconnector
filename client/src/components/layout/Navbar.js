@@ -40,7 +40,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className="navbar bg-dark">
       <h1>
         <Link to="/">
-          <i className="fa fa-user" /> DevConnector
+          <i className="fa fa-angle-double-right" /> DevConnector
         </Link>
       </h1>
       {!loading && (

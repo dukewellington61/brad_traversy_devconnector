@@ -81,6 +81,26 @@ wait for answer
 
 done
 
+
 45. Profile Reducer & Get Current Profile
 
 done
+
+
+46. Starting On The Dashboard
+
+Landing.js: 
+redirect to dashboard if user is logged in 
+
+Dashboard.js: 
+loading spinner in dashboard while user profile is beeing loaded 
+when user profile has been loaded some markp with hello username is rendered
+
+Dashboard.js:  
+conditional checks if user has profile --> if not renders text and button which links to register area 
+
+profile.js: 
+on logout state is set to  
+token: null,
+isAuthenticated: false,
+loading: false,

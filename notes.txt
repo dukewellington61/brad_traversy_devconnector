@@ -94,7 +94,7 @@ redirect to dashboard if user is logged in
 
 Dashboard.js: 
 loading spinner in dashboard while user profile is beeing loaded 
-when user profile has been loaded some markp with hello username is rendered
+when user profile has been loaded some markup with hello username is rendered
 
 Dashboard.js:  
 conditional checks if user has profile --> if not renders text and button which links to register area 
@@ -104,3 +104,49 @@ on logout state is set to
 token: null,
 isAuthenticated: false,
 loading: false,
+
+
+47. CreateProfile Component
+
+@components/profile-forms/CreateProfile.js
+
+new component created
+
+component has jsx for user register form
+
+form fields connected to useState hook which holds formdata 
+-> whatever is the value of the text field is beeing put in that part of the state of the form data:
+
+const onChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+button Add Social Networks triggers function toggleSocialInputs which hides or displays social media fields
+
+
+@App.js
+route to component
+ <PrivateRoute exact path="/create-profile" component={CreateProfile}/>
+
+
+48. Create Profile Action
+
+@actions/profile.js
+
+const createProfile 
+-> axios post request to send form data to /api/profile - route which delivers data to database
+
+and returns this data
+-> dispatches this data to reducer with action type GET_PROFILE 
+
+which updates profile parameter of profile state object
+-> dispatches an alert
+
+re-routes back to the dashboard using the history object which has a method called push that will redirect
+us to a client side route.
+
+status: 
+typed out
+
+re-watch stopped at 9:25
+
+another concept to comprehend: React Router -> watch this: https://www.youtube.com/watch?v=Law7wfdg_ls

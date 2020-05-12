@@ -134,19 +134,35 @@ route to component
 
 const createProfile 
 -> axios post request to send form data to /api/profile - route which delivers data to database
-
 and returns this data
--> dispatches this data to reducer with action type GET_PROFILE 
 
+-> dispatches this data to reducer with action type GET_PROFILE 
 which updates profile parameter of profile state object
+
 -> dispatches an alert
 
 re-routes back to the dashboard using the history object which has a method called push that will redirect
 us to a client side route.
 
-status: 
-typed out
+note:
+withRouter in CreateProfile.js is unnecessary because CreateProfile component has 
+access to the history object as it is because CreateProfile component is a child of PrivateRoute, 
+and PrivateRoute is a direct child of react-router-dom's Switch
 
-re-watch stopped at 9:25
+withRouter makes the history object available for components which ..... waiting for an answer from udemy 
+to finish sentence
 
-another concept to comprehend: React Router -> watch this: https://www.youtube.com/watch?v=Law7wfdg_ls
+
+49. Edit Profile
+
+@components/dashboard/DashboardActions.js
+component has links ('Edit Profile', 'Add Experience' and 'Add Education')
+component is beeing inserted in dashboard component
+
+@components/profile-forms/EditProfile.js
+renders form (similar to CreateProfile.js)
+pulls profile data from db and renders it in form fields
+
+@App.js
+private route created which leads to EditProfile component
+

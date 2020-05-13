@@ -149,8 +149,8 @@ withRouter in CreateProfile.js is unnecessary because CreateProfile component ha
 access to the history object as it is because CreateProfile component is a child of PrivateRoute, 
 and PrivateRoute is a direct child of react-router-dom's Switch
 
-withRouter makes the history object available for components which ..... waiting for an answer from udemy 
-to finish sentence
+withRouter makes the history object available for components which are not a 
+direct child of a react-router-dom component
 
 
 49. Edit Profile
@@ -166,3 +166,45 @@ pulls profile data from db and renders it in form fields
 @App.js
 private route created which leads to EditProfile component
 
+
+50. Add Education & Experiences
+
+@actions/types.js
+action type UPDATE_PROFILE
+
+@actions/profile.js
+const addExperience
+const addEducation
+-> axios post request to send form data to /api/profile/experience or /api/profile/education - route 
+which delivers data to database and returns this data
+
+-> dispatches this data to reducer with action type UPDATE_PROFILE
+which updates experience object or education object in profile state object
+
+-> dispatches an alert
+
+re-routes back to the dashboard using the history object which has a method called push that will redirect
+us to a client side route.
+
+@components/profile-forms/AddExperience.js
+@components/profile-forms/AddEducation.js
+renders the add experience form
+toggles current property in profile-state
+has useState hook [toDateDisabled, toggleDisabled] which is used to set disabled in the 'to' form field 
+to disabled 
+So if current job is checked in the check box the 'to' form field can't be accessed.
+
+@App.js
+private route: path="/add-experience"
+private route: path="/add-education"
+
+
+51. List Education & Experiences
+
+@components/dashboard/Experience.js
+renders experience
+component is injected in dashboard when corresponding endpoint is hit
+
+delete button
+
+continue at 8:30

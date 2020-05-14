@@ -203,8 +203,39 @@ private route: path="/add-education"
 
 @components/dashboard/Experience.js
 renders experience
-component is injected in dashboard when corresponding endpoint is hit
+render delete button (still functionless)
 
-delete button
+@components/dashboard/Education.js
+renders education
+render delete button (still functionless)
 
-continue at 8:30
+
+both components are injected in dashboard when corresponding endpoint is hit 
+(by clicking the corresponding button)
+
+
+52. Delete Education, Experiences & Account
+
+@actions/profile.js
+const deleteExperience
+
+const deleteEducation
+
+const deleteAccount --> deletes user and profile
+
+
+@actions/types.js
+export const ACCOUNT_DELETED = "ACCOUNT_DELETED";
+
+@reducers/auth.js
+case ACCOUNT_DELETED
+does the same as:
+case REGISTER_FAIL:
+case AUTH_ERROR:
+case LOGIN_FAIL:
+case LOGOUT:
+
+clears everything out the auth state object
+removes token from local storage
+
+    

@@ -258,9 +258,64 @@ The problem is in the front end but I have no idea where.
 
 This is the link to my repo: https://github.com/dukewellington61/brad_traversy_devconnector
 
+Okay, the problem was:  
+
+@routes/api/profile.js
+router.delete("/experience/:exp_id", auth, async (req, res) => ....
+.... 
+res.json({ msg: "Experience deleted" });
+res.json(profile);
+
+So, basically this function tried to send two responds. That is not possible. So an error was thrown.
+It said something like 'header was already sended'
+
+@components/dashboard/Experience.js
+onClick={() => deleteExperience(exp._id)}
+
+@components/dashboard/Education.js
+onClick={() => deleteEducation(edu._id)}
+
+@components/dashboard/Dashboard.js
+ <button className="btn btn-danger">Delete My Account</button>
+
+onClick={() => deleteAccount()
+
+@routes/api/profile.js
+await Post.deleteMany({ user: req.user.id });
 
 
+53. Finish Profile Actions & Reducer
+
+@actions/types.js
+export const GET_PROFILES = "GET_PROFILES";
+export const GET_REPOS = "GET_REPOS";
 
 
+@actions/profile.js
+const getProfile
+const getProfileById
+const getGithubRepos
 
 
+@reducers/profile.js
+case GET_PROFILES:
+return {
+    ...state,
+    profiles: payload,
+    loading: false,
+}
+
+ case GET_REPOS:
+      return {
+        ...state,
+        repos: payload,
+        loading: false,
+      };
+
+
+54. Display Profiles
+@components/profiles/Profiles.js
+@components/profiles/ProfileItems.js
+new components created
+
+stop at 4:12

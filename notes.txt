@@ -318,4 +318,25 @@ return {
 @components/profiles/ProfileItems.js
 new components created
 
-stop at 4:12
+@App.js
+ <Route exact path="/profiles" component={Profiles} />
+
+@components/layout/Navbar.js
+const authlinks
+const guestLinks
+ <li>
+    <Link to="/profiles">Developers</Link>
+</li>
+
+
+55. Addressing The Console Warnings
+
+56. Starting On The Profile
+@components/profile/Profile.js
+new component
+
+@App.js
+<Route exact path="/profile/:id" component={Profile} />
+
+If the user is logged in and the profile that that user is viewing is that user's profile and edit button is 
+to be displayed

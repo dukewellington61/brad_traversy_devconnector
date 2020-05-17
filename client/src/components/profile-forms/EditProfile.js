@@ -45,7 +45,7 @@ const EditProfile = ({
       youtube: loading || !profile.social ? "" : profile.social.youtube,
       instagram: loading || !profile.social ? "" : profile.social.instagram,
     });
-  }, [loading]);
+  }, [loading, getCurrentProfile]);
   /* if the value for loading (boolean) changes, the hook fires,
    loading changes from true to false when profile component is loaded so it changes only once so basically 
    getCurrentProfile is called the moment the profile component is loaded*/

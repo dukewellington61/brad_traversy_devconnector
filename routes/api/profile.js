@@ -115,6 +115,7 @@ router.post(
 // @access  Public
 router.get("/", async (req, res) => {
   try {
+    // profiles object contains user-object with name and avatar because of populate()
     const profiles = await Profile.find().populate("user", ["name", "avatar"]);
     res.json(profiles);
   } catch (err) {

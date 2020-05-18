@@ -332,11 +332,27 @@ const guestLinks
 55. Addressing The Console Warnings
 
 56. Starting On The Profile
+
+profile page for user
+profile will be broken up in a bunch of subcomponents
+
 @components/profile/Profile.js
-new component
+parent component to all the subcomponents
 
-@App.js
-<Route exact path="/profile/:id" component={Profile} />
 
-If the user is logged in and the profile that that user is viewing is that user's profile and edit button is 
-to be displayed
+57. ProfileTop & ProfileAbout Components
+Top section of the profile
+
+@components/profile/Profile.js
+@components/profile/ProfileTop.js
+@components/profile/ProfileAbout.js
+components created
+
+58. Profile Experience & Education Display
+@components/profile/ProfileExperience.js
+
+59. Displaying Github Repos
+@components/profile/ProfileGithub.js
+
+error
+stopped at 8.12

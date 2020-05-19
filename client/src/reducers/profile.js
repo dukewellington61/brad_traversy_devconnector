@@ -10,7 +10,7 @@ import {
 const initialState = {
   profile: null,
   profiles: [],
-  repose: [],
+  repos: [],
   loading: true,
   error: {},
 };

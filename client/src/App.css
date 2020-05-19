@@ -583,3 +583,8 @@ button {
     padding: 0.3rem 0.4rem;
   }
 }
+
+/* added by me */
+.repo li {
+  list-style: none;
+}

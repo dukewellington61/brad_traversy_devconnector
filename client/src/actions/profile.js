@@ -21,6 +21,12 @@ export const getCurrentProfile = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
+    // if a guest user visits a user profil, that profile is still in the state and can be accessed
+    // by the guest user if the guest user signs up, see:
+    // (https://www.udemy.com/course/mern-stack-front-to-back/learn/lecture/17075594#overview)
+    // to avoid this said profile has to be cleared from the state
+    dispatch({ type: CLEAR_PROFILE });
+
     dispatch({
       type: PROFILE_ERROR,
       payload: {

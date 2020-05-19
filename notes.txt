@@ -356,3 +356,18 @@ components created
 
 error
 stopped at 8.12
+
+61. Post Reducer, Action & Initial Component
+
+63. Like & Unlike Functionality
+@client/src/actions/types.js
+
+@client/src/actions/post.js
+// Add like
+export const likePost = (id) => async (dispatch) => {..
+
+stop at 0:44
+
+trying to figure this out on my own 
+--> action already setup up
+--> next work on reducer (tip: client/src/reducers/post.js)

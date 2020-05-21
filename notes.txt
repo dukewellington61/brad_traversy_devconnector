@@ -371,3 +371,5 @@ stop at 0:44
 trying to figure this out on my own 
 --> action already setup up
 --> next work on reducer (tip: client/src/reducers/post.js)
+
+couldn't figure it out --> follow tutorial

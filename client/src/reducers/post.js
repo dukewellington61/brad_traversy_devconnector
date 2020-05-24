@@ -1,9 +1,11 @@
 import {
   GET_POSTS,
+  GET_POST,
   ADD_POST,
   DELETE_POST,
   POST_ERROR,
   UPDATE_LIKES,
+  UPDATE_COMMENTS,
 } from "../actions/types";
 
 const initialState = {
@@ -21,6 +23,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         posts: payload,
+        loading: false,
+      };
+    case GET_POST:
+      return {
+        ...state,
+        post: payload,
         loading: false,
       };
     case ADD_POST:
@@ -47,6 +55,12 @@ export default function (state = initialState, action) {
         posts: state.posts.map((post) =>
           post._id === payload.id ? { ...post, likes: payload.likes } : post
         ),
+      };
+    case UPDATE_COMMENTS:
+      return {
+        ...state,
+        post: { ...state.post, comments: payload },
+        loading: false,
       };
     default:
       return state;
